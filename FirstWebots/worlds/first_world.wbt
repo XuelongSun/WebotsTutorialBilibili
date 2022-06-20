@@ -4,8 +4,8 @@ WorldInfo {
 }
 Viewpoint {
   fieldOfView 1.2
-  orientation -0.1022164831168517 0.97316853108086 0.20614267072380635 2.212653199848679
-  position 5.893076405515504 4.929611303551366 -5.24389111970486
+  orientation -0.14940183381703642 0.9719469733953665 0.18165399241330607 1.7588726875266234
+  position 3.211511313832584 3.522360616842248 -3.6524767476767668
 }
 Floor {
   size 12 8
@@ -293,6 +293,10 @@ Cabinet {
 }
 BunchOfSunFlowers {
   translation -5.33689 1.77636e-15 3.53289
+}
+Shape {
+  appearance PBRAppearance {
+  }
 }
 BunchOfSunFlowers {
   translation -5.33689 1.77636e-15 -3.75711
@@ -1998,7 +2002,7 @@ RectangleArena {
   floorAppearance PBRAppearance {
     baseColorMap ImageTexture {
       url [
-        "D:/BaiduNetdiskWorkspace/Dr.Sun/series_webots_tutorial/arena_floor_texture.png"
+        "textures/arena_floor_texture.png"
       ]
     }
     roughness 1
