@@ -1,11 +1,12 @@
 #VRML_SIM R2021a utf8
 WorldInfo {
+  gravity 9.8
   coordinateSystem "NUE"
 }
 Viewpoint {
   fieldOfView 1.2
-  orientation -0.14940183381703642 0.9719469733953665 0.18165399241330607 1.7588726875266234
-  position 3.211511313832584 3.522360616842248 -3.6524767476767668
+  orientation 0.4517729941583572 -0.8489787196927814 -0.2741100057604585 5.064748503169921
+  position -1.0326947149384544 0.6051993063414717 0.1749654214493897
 }
 Floor {
   size 12 8
@@ -36,27 +37,28 @@ Sofa {
   rotation 0 1 0 1.5708
 }
 OfficeChair {
-  translation 2.55 0 1.67
-  rotation 0 1 0 -1.5707953071795862
+  translation 2.5500000060232373 0.009871160234425802 1.6699999435456874
+  rotation 6.276468281124457e-05 0.9999999960038713 6.36620123005759e-05 -1.5707978455975555
 }
 OfficeChair {
-  translation 2.55 0 -0.17
-  rotation 0 -1 0 1.309
+  translation 2.5499999912149147 0.009871160234425747 -0.1700000571712409
+  rotation -8.193220646189063e-05 -0.9999999946084617 -6.379804162210404e-05 1.309002542859984
   name "office chair(1)"
 }
 OfficeChair {
-  translation 3.86226 0 -0.187278
-  rotation 0 1 0 1.83259
+  translation 3.8622600087849386 0.009871160234425774 -0.18727794282874646
+  rotation -4.89543762252459e-05 0.9999999968254691 6.28691567946314e-05 1.8325874654142476
   name "office chair(2)"
 }
 OfficeChair {
-  translation 3.98226 0 1.65272
-  rotation 0 1 0 1.57079
+  translation 3.965033129834349 0.010586711591835302 1.6527784321417318
+  rotation -0.002800249719405068 0.9999918650829285 0.0029031654233088715 1.570702436203322
   name "office chair(3)"
 }
 Door {
   translation 3.52812 0 -4
   size 1.8 2.4 0.2
+  position -1.8762631399434505e-08
   frameAppearance MattePaint {
     baseColor 0 0 0
   }
@@ -144,8 +146,8 @@ Transform {
       rotation 0 1 0 1.8326
     }
     ComputerMouse {
-      translation 1.44 0.77 1.57
-      rotation 0 1 0 -1.3089953071795861
+      translation 1.44 0.7399607999988156 1.57
+      rotation 6.637943482168778e-17 1 -5.663816769594526e-17 -1.3089953071795861
     }
   ]
 }
@@ -188,8 +190,8 @@ Transform {
       name "keyboard(1)"
     }
     ComputerMouse {
-      translation 1.44 0.77 1.57
-      rotation 0 1 0 -1.3089953071795861
+      translation 1.44 0.7399607999988156 1.5699999999999998
+      rotation -9.30981836756752e-18 1 1.8325698297049865e-16 -1.3089953071795861
       name "computer mouse(1)"
     }
   ]
@@ -226,8 +228,8 @@ Transform {
       name "keyboard(2)"
     }
     ComputerMouse {
-      translation 1.44 0.77 1.57
-      rotation 0 1 0 -1.3089953071795861
+      translation 1.4399999999999986 0.7399607999988157 1.5699999999999994
+      rotation 3.0066285534055196e-16 1 -8.400402595910243e-17 -1.3089953071795863
       name "computer mouse(2)"
     }
   ]
@@ -264,8 +266,8 @@ Transform {
       name "keyboard(3)"
     }
     ComputerMouse {
-      translation 1.67534 0.77 1.46122
-      rotation 0 1 0 -1.3089953071795861
+      translation 1.6753400000000038 0.7399607999988156 1.4612200000000017
+      rotation 1.4641688962148006e-17 1 -3.836625889090446e-17 -1.3089953071795863
       name "computer mouse(3)"
     }
   ]
@@ -2198,4 +2200,165 @@ Solid {
     }
   ]
   name "table_lamp.obj"
+}
+Robot {
+  translation -1.84488 0.01 -0.163159
+  children [
+    DistanceSensor {
+      translation 0.08 0.08 0
+    }
+    Camera {
+      translation 0.075 0.14 0.03
+      rotation 0 1 0 -1.8325953071795862
+      name "CameraRight"
+    }
+    Camera {
+      translation 0.075 0.14 -0.03
+      rotation 0 -1 0 1.309
+      name "CameraLeft"
+    }
+    Transform {
+      translation 0.08 0.08 0
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0.333333 0
+            roughness 1
+            metalness 0
+          }
+          geometry Cone {
+            bottomRadius 0.01
+            height 0.05
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 0.075 0.14 0.03
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+          }
+          geometry Cylinder {
+            height 0.008
+            radius 0.004
+          }
+        }
+      ]
+    }
+    Transform {
+      translation 0.075 0.14 -0.03
+      rotation 0 0 1 -1.5707953071795862
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 0
+          }
+          geometry Cylinder {
+            height 0.008
+            radius 0.004
+          }
+        }
+      ]
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0.04 0.1
+      }
+      device [
+        RotationalMotor {
+          name "MotorRight"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.04 0.1
+        rotation 0.9999999999999996 2.049665329910469e-08 2.0496584284843573e-08 1.570799693899575
+        children [
+          DEF WheelRight Shape {
+            appearance DEF APPE_WHEEL PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/checkered_marble.jpg"
+                ]
+              }
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE WheelRight
+        physics Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 0 1
+        anchor 0 0.04 -0.1
+      }
+      device [
+        RotationalMotor {
+          name "MotorLeft"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.04 -0.1
+        rotation 0.9999999999999996 1.9608620292193754e-08 1.9608554268027708e-08 1.570799693899575
+        children [
+          DEF WheelLeft Shape {
+            appearance DEF APPE_WHEEL PBRAppearance {
+              baseColorMap ImageTexture {
+                url [
+                  "textures/checkered_marble.jpg"
+                ]
+              }
+              roughness 1
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE WheelLeft
+        physics Physics {
+        }
+      }
+    }
+    Solid {
+      translation 0 0.09995586154064448 0
+      children [
+        DEF Body Shape {
+          appearance PBRAppearance {
+            baseColor 0.333333 0.666667 1
+            roughness 1
+            metalness 0
+          }
+          geometry Cylinder {
+            height 0.14
+            radius 0.08
+          }
+        }
+      ]
+    }
+  ]
+  boundingObject Transform {
+    translation 0 0.1 0
+    children [
+      USE Body
+    ]
+  }
+  physics Physics {
+  }
 }
