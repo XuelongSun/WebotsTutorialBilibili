@@ -5,8 +5,8 @@ WorldInfo {
 }
 Viewpoint {
   fieldOfView 1.2
-  orientation 0.4517729941583572 -0.8489787196927814 -0.2741100057604585 5.064748503169921
-  position -1.0326947149384544 0.6051993063414717 0.1749654214493897
+  orientation -0.012668209999028207 0.9930152479034404 0.11730402331842495 2.875842939726077
+  position -2.303234298846699 0.6312774674697235 -2.0611623660919034
 }
 Floor {
   size 12 8
@@ -37,28 +37,28 @@ Sofa {
   rotation 0 1 0 1.5708
 }
 OfficeChair {
-  translation 2.5500000060232373 0.009871160234425802 1.6699999435456874
-  rotation 6.276468281124457e-05 0.9999999960038713 6.36620123005759e-05 -1.5707978455975555
+  translation 2.550000004951271 0.009871161355216457 1.6699999435362238
+  rotation 6.275944077024027e-05 0.9999999960038565 6.366741418651626e-05 -1.5707978455597094
 }
 OfficeChair {
-  translation 2.5499999912149147 0.009871160234425747 -0.1700000571712409
-  rotation -8.193220646189063e-05 -0.9999999946084617 -6.379804162210404e-05 1.309002542859984
+  translation 2.549999990177032 0.009871161355216401 -0.17000005690293554
+  rotation -8.192698865653843e-05 -0.9999999946084417 -6.38050572318222e-05 1.3090025428221368
   name "office chair(1)"
 }
 OfficeChair {
-  translation 3.8622600087849386 0.009871160234425774 -0.18727794282874646
-  rotation -4.89543762252459e-05 0.9999999968254691 6.28691567946314e-05 1.8325874654142476
+  translation 3.862260009822818 0.009871161355216374 -0.18727794309704887
+  rotation -4.8959759521404297e-05 0.9999999968254574 6.2865152994899e-05 1.8325874654521288
   name "office chair(2)"
 }
 OfficeChair {
-  translation 3.965033129834349 0.010586711591835302 1.6527784321417318
-  rotation -0.002800249719405068 0.9999918650829285 0.0029031654233088715 1.570702436203322
+  translation 3.964420168819735 0.010734763217571414 1.6532582589993197
+  rotation -0.0027341774353954987 0.9999937384744895 0.0022466164706703416 1.5685569559114745
   name "office chair(3)"
 }
 Door {
   translation 3.52812 0 -4
   size 1.8 2.4 0.2
-  position -1.8762631399434505e-08
+  position -3.1196811883152756e-08
   frameAppearance MattePaint {
     baseColor 0 0 0
   }
@@ -146,8 +146,8 @@ Transform {
       rotation 0 1 0 1.8326
     }
     ComputerMouse {
-      translation 1.44 0.7399607999988156 1.57
-      rotation 6.637943482168778e-17 1 -5.663816769594526e-17 -1.3089953071795861
+      translation 1.44 0.7399608000059953 1.57
+      rotation -1.158115078923884e-16 1 -1.440343717971761e-18 -1.3089953071795861
     }
   ]
 }
@@ -190,8 +190,8 @@ Transform {
       name "keyboard(1)"
     }
     ComputerMouse {
-      translation 1.44 0.7399607999988156 1.5699999999999998
-      rotation -9.30981836756752e-18 1 1.8325698297049865e-16 -1.3089953071795861
+      translation 1.44 0.7399608000059953 1.5699999999999998
+      rotation 9.584875197985762e-17 1 -3.155821301206557e-17 -1.3089953071795861
       name "computer mouse(1)"
     }
   ]
@@ -228,8 +228,8 @@ Transform {
       name "keyboard(2)"
     }
     ComputerMouse {
-      translation 1.4399999999999986 0.7399607999988157 1.5699999999999994
-      rotation 3.0066285534055196e-16 1 -8.400402595910243e-17 -1.3089953071795863
+      translation 1.4399999999999986 0.7399608000059953 1.5699999999999994
+      rotation 1.6651315732570394e-16 1 -4.5248485928257586e-17 -1.3089953071795863
       name "computer mouse(2)"
     }
   ]
@@ -266,8 +266,8 @@ Transform {
       name "keyboard(3)"
     }
     ComputerMouse {
-      translation 1.6753400000000038 0.7399607999988156 1.4612200000000017
-      rotation 1.4641688962148006e-17 1 -3.836625889090446e-17 -1.3089953071795863
+      translation 1.6753400000000056 0.7399608000059953 1.4612200000000026
+      rotation 1.0530527724852527e-16 1 -3.412114534721189e-16 -1.3089953071795863
       name "computer mouse(3)"
     }
   ]
@@ -2202,10 +2202,62 @@ Solid {
   name "table_lamp.obj"
 }
 Robot {
-  translation -1.84488 0.01 -0.163159
+  translation -4.36365471863462 0.008911197706102658 -1.1591071040190695
+  rotation 0.02621567544508561 0.9993947163166732 -0.02286786739672431 -1.70759798812456
   children [
+    Solid {
+      translation -0.06 0.024 0
+      children [
+        DEF Pillar Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.666667 1
+            transparency 0.2
+            roughness 1
+            metalness 0
+          }
+          geometry Capsule {
+            height 0.02
+            radius 0.01
+          }
+        }
+      ]
+      name "solid(3)"
+      boundingObject USE Pillar
+      physics Physics {
+      }
+    }
+    LED {
+      translation 0 0.17 0
+      children [
+        Shape {
+          appearance PBRAppearance {
+            transparency 0.5
+            roughness 1
+            metalness 0
+            emissiveIntensity 4
+          }
+          geometry Cylinder {
+            height 0.006
+            radius 0.004
+          }
+        }
+      ]
+    }
     DistanceSensor {
-      translation 0.08 0.08 0
+      translation 0 0.03 0.07
+      rotation 0 0 1 -1.5707996938995747
+      name "DisSensRight"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0 0.03 -0.07
+      rotation 0 0 1 -1.5707996938995747
+      name "DisSensLeft"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.2 0.08 0
+      name "DisSensFront"
     }
     Camera {
       translation 0.075 0.14 0.03
@@ -2266,7 +2318,8 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        axis 0 0 1
+        position 412.33569376562247
+        axis 0 0 -1
         anchor 0 0.04 0.1
       }
       device [
@@ -2276,7 +2329,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0 0.04 0.1
-        rotation 0.9999999999999996 2.049665329910469e-08 2.0496584284843573e-08 1.570799693899575
+        rotation 0.2816920790936906 0.6784735339345795 0.6784712494470172 2.59244025671072
         children [
           DEF WheelRight Shape {
             appearance DEF APPE_WHEEL PBRAppearance {
@@ -2302,7 +2355,8 @@ Robot {
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        axis 0 0 1
+        position 353.07188944776476
+        axis 0 0 -1
         anchor 0 0.04 -0.1
       }
       device [
@@ -2312,7 +2366,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0 0.04 -0.1
-        rotation 0.9999999999999996 1.9608620292193754e-08 1.9608554268027708e-08 1.570799693899575
+        rotation 0.7136397581705782 -0.4953382419408517 -0.49533657408794796 1.9019525825677142
         children [
           DEF WheelLeft Shape {
             appearance DEF APPE_WHEEL PBRAppearance {
@@ -2361,4 +2415,32 @@ Robot {
   }
   physics Physics {
   }
+  controller "my_robot"
+}
+DEF Obstacle Solid {
+  translation -4.37261 0.199608 -0.831908
+  rotation -0.003707810442706199 0.9999928014738043 0.000805693672396691 0.00016500268371047764
+  children [
+    DEF box Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.333333 0.498039
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.3 0.3 0.2
+      }
+    }
+  ]
+  boundingObject USE box
+  physics Physics {
+  }
+}
+FloorLight {
+  translation -5.42368 0 -1.86185
+}
+FloorLight {
+  translation -5.40674 0 2.4567
+  name "floor light(1)"
+  pointLightIntensity 3
 }
