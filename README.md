@@ -15,3 +15,6 @@ Source code and project files used in the [video tutorial](https://www.bilibili.
 
 #### For more interesting videos related to robots/AI/Bioinspiration, see my [Bilibili Channel](https://space.bilibili.com/13031745)
 
+### stars:
+
+<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwX0hsWFdDdkdPaXVBQXE0YTVhUHFQS1ZLR3JLbnFJVzNWVWZOQg==#XuelongSun/WebotsTutorialBilibili&Date" frameBorder="0"></iframe>
